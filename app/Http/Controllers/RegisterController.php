@@ -30,7 +30,7 @@ class RegisterController extends Controller
             'name'=>$request->name,
             'username' => Str::lower($request->username),
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' =>$request->password
         ]);
 
         //autenticar
@@ -40,6 +40,6 @@ class RegisterController extends Controller
         ]);
 
         //redireccionar
-        return redirect()->route('post.index');
+        return redirect()->route('login');
     }
 }
