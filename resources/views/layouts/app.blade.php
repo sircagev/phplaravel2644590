@@ -23,10 +23,31 @@
 
         <header class='p-5 border-b bg-white shadow flex justify-between'>
             <h1 class='text-3xl font-black'>Devstagram</h1>
-            <ul class="mr-14 mt-1 font-ligth font-sans text-base flex gap-5">
-                <a href="">LOGIN</a>
-                <a href="{{route('register')}}">CREAR CUENTA</a>
-            </ul>
+            
+            @auth()
+                <nav class="flex gap-2 items-center">
+                    <a class="font-bold uppercase text-gray-600" href="#">
+                        Hola <span class="font-bold" > {{ auth()->user()->username }} </span>
+                    </a>
+        
+                    <form action=" {{ route('logout') }} " method="post">
+                        @csrf
+                        <button type="submit" class="font-bold uppercase text-gray-600" >
+                            Cerrar sesión
+                        </button>
+                    </form>
+        
+                </nav>
+            @endauth
+    
+            @guest()
+                <nav class="flex gap-2 items-center">
+                    <a class="font-bold uppercase text-gray-600" href="{{ route('login') }}">Login</a>
+                    <a class="font-bold uppercase text-gray-600" href="{{route('register')}}">
+                        Crear cuenta
+                    </a>
+                </nav>
+            @endguest
         </header>
         <main class='container mx-auto mt-10'>
             <h2 class='font-black text-center text-3xl mb-10'>
