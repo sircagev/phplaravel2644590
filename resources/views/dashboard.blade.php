@@ -18,7 +18,7 @@
                  <p class="font-bold uppercase">{{ $user->username }}</p>
 
                  <p class="text-gray-800 text-sm mb-3 font-bold">
-                    1
+                    10
                     <span class="font-normal mt-10">Seguidores</span>
                  </p>
                  <p class="text-gray-800 text-sm mb-3 font-bold">
