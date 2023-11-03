@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Hola
+    Crear una nueva publicacion
 @endsection
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
 @section('contenido')
 <div class="md:flex md:justify-center md:gap-10 md:items-center">
     <div class="md:w-6/12 px-10">
-        <img src="{{ asset('img/aVATAR.webp') }}" alt="Imagen aqui">
+        <form action="{{ route('imagenes.store') }}" enctype="multipart/form-data" method="post" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
+            @csrf
+        </form>
     </div>
     <div class="md:w-6/12 px-10 bg-white p-6 rounded-lg shadow-xl">
         <form method="post" action="{{ route('login') }}"  novalidate>
@@ -30,10 +33,7 @@
                 @enderror
             </div>
 
-            <input type='submit' value='Publicar' class='bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg'/>
-           
-
-            
+            <input type='submit' value='Publicar' class='bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg'/> 
         </form>
     </div>
 </div>

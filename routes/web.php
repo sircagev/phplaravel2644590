@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ImagenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('/{user:username}',[PostController::class, 'index'])->name('post.inde
 Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 
 Route::get('/posts/create',[PostController::class, 'create'])->name('post.create');
+
+Route::post('/imagenes',[ImagenController::class, 'store'])->name('imagenes.store');
