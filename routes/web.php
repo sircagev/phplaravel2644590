@@ -35,3 +35,5 @@ Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 Route::get('/posts/create',[PostController::class, 'create'])->name('post.create');
 
 Route::post('/imagenes',[ImagenController::class, 'store'])->name('imagenes.store');
+
+Route::post('/posts',[PostController::class,'store'])->name('posts.store');
